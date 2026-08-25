@@ -3,4 +3,4 @@ Web app that generates SVGs of pixel fade gradients/patterns. All AI-generated c
 
 https://clayallsopp.github.io/pixel-fade-generator/
 
-test
+test!
