@@ -154,7 +154,10 @@
         }
 
         setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
-        themeToggle.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.documentElement.classList.contains('dark'));
+            generateSVG();
+        });
 
         // --- State ---
         let curvePoints = [{x: 0, y: 1}, {x: 0.5, y: 0.5}, {x: 1, y: 0}]; 
@@ -235,6 +238,9 @@
             const isTransparent = document.getElementById('transparentBg').checked;
             const useBwOnly = document.getElementById('bwToggle').checked;
             const directionMode = directionModeSelect.value;
+            const isDark = document.documentElement.classList.contains('dark');
+            const pixelFill = isDark ? 'white' : 'black';
+            const backgroundFill = isDark ? 'black' : 'white';
             
             const seed = xmur3(seedStr);
             const rand = mulberry32(seed());
@@ -243,7 +249,7 @@
             const width = cols * totalPixelSize - (cols > 0 ? gap : 0);
             const height = rows * totalPixelSize - (rows > 0 ? gap : 0);
             let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
-            if (!isTransparent) svg += `<rect width="100%" height="100%" fill="white"/>`;
+            if (!isTransparent) svg += `<rect width="100%" height="100%" fill="${backgroundFill}"/>`;
 
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < cols; c++) {
@@ -282,7 +288,7 @@
                         const x = c * totalPixelSize;
                         const y = r * totalPixelSize;
                         const opacity = useBwOnly ? 1 : Math.min(1, curveAdjustedFade * 1.5);
-                        svg += `<rect x="${x}" y="${y}" width="${pixelSize}" height="${pixelSize}" fill="black" fill-opacity="${opacity}"/>`;
+                        svg += `<rect x="${x}" y="${y}" width="${pixelSize}" height="${pixelSize}" fill="${pixelFill}" fill-opacity="${opacity}"/>`;
                     }
                 }
             }
