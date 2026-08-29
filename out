@@ -1,0 +1,17 @@
+054f23412d5f181a58ca6348cb9d465643eb5046	HEAD
+0a0db2c6d3d582ccba7c9f69a341d32b75ef9fe5	refs/heads/callsopp-figma-patch-1
+28c21cb6b2a8736e26bc110a5773922b474fe720	refs/heads/figma/callsopp-test-1
+62428ccd733d098025b20c6affc05af52424b895	refs/heads/figma/patch-2
+054f23412d5f181a58ca6348cb9d465643eb5046	refs/heads/language-localization
+054f23412d5f181a58ca6348cb9d465643eb5046	refs/heads/main
+8b676299854360477ccce592b6e53309f7d9d12d	refs/heads/project-configuration
+321bcc2f3ee8193f58fd6a50a9fab547647493c9	refs/heads/site-translation
+db3b521d533ae4407cf9dc5074c0d54f4a49de4b	refs/heads/v0/callsopp-figma-906dc2e2
+0a0db2c6d3d582ccba7c9f69a341d32b75ef9fe5	refs/pull/1/head
+a29164da3dcee93a06c4df4ae1f2fc9b91eedb98	refs/pull/1/merge
+28c21cb6b2a8736e26bc110a5773922b474fe720	refs/pull/2/head
+9e494a44c1dc6baab629797b3f9e9e7ab6efd8b8	refs/pull/2/merge
+62428ccd733d098025b20c6affc05af52424b895	refs/pull/3/head
+2c08b13b91510e749a3775b31a06f6b98fa9185d	refs/pull/3/merge
+8b676299854360477ccce592b6e53309f7d9d12d	refs/pull/4/head
+3ddbde2e34a4b206ea7e3cb80c88cba3f39756f3	refs/pull/4/merge
