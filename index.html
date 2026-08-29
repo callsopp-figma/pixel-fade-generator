@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Fade Out Gradient Pattern SVG Generator</title>
+    <title>Generador SVG de patrones de degradado con desvanecimiento de píxeles</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -22,33 +22,33 @@
 
     <div class="container mx-auto p-4 lg:p-8">
         <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-gray-900">Pixel Fade Out Gradient Pattern SVG Generator</h1>
-            <p class="text-lg text-gray-600 mt-2">Create custom random fade gradients/patterns and export them as SVG. Useful for 3D printing.</p>
+            <h1 class="text-4xl font-bold text-gray-900">Generador SVG de patrones de degradado con desvanecimiento de píxeles</h1>
+            <p class="text-lg text-gray-600 mt-2">Crea degradados y patrones de desvanecimiento aleatorios personalizados y expórtalos como SVG. Útil para impresión 3D.</p>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Controls Column -->
             <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-lg">
-                <h2 class="text-2xl font-bold mb-6 border-b pb-3">Controls</h2>
+                <h2 class="text-2xl font-bold mb-6 border-b pb-3">Controles</h2>
                 <div class="space-y-6">
                     <!-- Grid Settings -->
                     <div>
-                        <h3 class="text-lg font-semibold mb-3 text-gray-700">Grid & Pixel</h3>
+                        <h3 class="text-lg font-semibold mb-3 text-gray-700">Cuadrícula y píxel</h3>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label for="columns" class="block text-sm font-medium text-gray-600 mb-1">Columns</label>
+                                <label for="columns" class="block text-sm font-medium text-gray-600 mb-1">Columnas</label>
                                 <input type="number" id="columns" value="50" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
-                                <label for="rows" class="block text-sm font-medium text-gray-600 mb-1">Rows</label>
+                                <label for="rows" class="block text-sm font-medium text-gray-600 mb-1">Filas</label>
                                 <input type="number" id="rows" value="50" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
-                                <label for="pixelSize" class="block text-sm font-medium text-gray-600 mb-1">Pixel Size</label>
+                                <label for="pixelSize" class="block text-sm font-medium text-gray-600 mb-1">Tamaño del píxel</label>
                                 <input type="number" id="pixelSize" value="10" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
-                                <label for="gap" class="block text-sm font-medium text-gray-600 mb-1">Gap</label>
+                                <label for="gap" class="block text-sm font-medium text-gray-600 mb-1">Espacio</label>
                                 <input type="number" id="gap" value="1" min="0" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                         </div>
@@ -57,18 +57,18 @@
                     <!-- Fade Settings -->
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <h3 class="text-lg font-semibold mb-1 text-gray-700">Fade Direction</h3>
-                             <label for="directionMode" class="block text-sm font-medium text-gray-600 mb-2">Mode</label>
+                            <h3 class="text-lg font-semibold mb-1 text-gray-700">Dirección del desvanecimiento</h3>
+                             <label for="directionMode" class="block text-sm font-medium text-gray-600 mb-2">Modo</label>
                             <select id="directionMode" class="w-full p-2 border border-gray-300 rounded-lg mb-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                                 <option value="radial">Radial</option>
-                                <option value="linear" selected>Linear</option>
+                                <option value="linear" selected>Lineal</option>
                             </select>
                             <div id="direction-editor-container" class="editor-container bg-gray-50 p-2 rounded-lg border border-gray-200 w-full h-32">
                                 <svg id="direction-editor" class="w-full h-full"></svg>
                             </div>
                         </div>
                         <div>
-                             <h3 class="text-lg font-semibold mb-3 text-gray-700">Fade Curve</h3>
+                             <h3 class="text-lg font-semibold mb-3 text-gray-700">Curva de desvanecimiento</h3>
                             <div id="curve-editor-container" class="editor-container bg-gray-50 p-2 rounded-lg border border-gray-200 w-full h-40">
                                 <svg id="curve-editor" class="w-full h-full"></svg>
                             </div>
@@ -77,19 +77,19 @@
 
                     <!-- Randomness & Style -->
                     <div>
-                        <h3 class="text-lg font-semibold mb-3 text-gray-700">Style & Randomness</h3>
+                        <h3 class="text-lg font-semibold mb-3 text-gray-700">Estilo y aleatoriedad</h3>
                         <div>
-                            <label for="seed" class="block text-sm font-medium text-gray-600 mb-1">Random Seed</label>
+                            <label for="seed" class="block text-sm font-medium text-gray-600 mb-1">Semilla aleatoria</label>
                             <input type="text" id="seed" value="hello" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                         </div>
                         <div class="mt-4 space-y-2">
                             <div class="flex items-center">
                                 <input type="checkbox" id="transparentBg" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                                <label for="transparentBg" class="ml-2 block text-sm text-gray-900">Transparent background</label>
+                                <label for="transparentBg" class="ml-2 block text-sm text-gray-900">Fondo transparente</label>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" id="bwToggle" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                                <label for="bwToggle" class="ml-2 block text-sm text-gray-900">Use Black & White only</label>
+                                <label for="bwToggle" class="ml-2 block text-sm text-gray-900">Usar solo blanco y negro</label>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                     <!-- Export -->
                     <div class="pt-4 border-t">
                          <button id="exportBtn" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300">
-                            Export SVG
+                            Exportar SVG
                         </button>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
 
             <!-- Preview Column -->
             <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center">
-                 <h2 class="text-2xl font-bold mb-6 self-start">Preview</h2>
+                 <h2 class="text-2xl font-bold mb-6 self-start">Vista previa</h2>
                 <div id="preview" class="w-full h-full border-2 border-dashed border-gray-300 rounded-lg overflow-auto flex items-center justify-center bg-gray-50" style="min-height: 400px;">
                     <!-- SVG will be rendered here -->
                 </div>
