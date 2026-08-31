@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +11,24 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .editor-container {
             touch-action: none;
         }
+
         .handle {
             cursor: move;
         }
     </style>
 </head>
-<body class="bg-red-500 text-gray-800">
 
+<body class="bg-red-500 text-gray-800">
+    !!!
     <div class="container mx-auto p-4 lg:p-8">
         <header class="text-center mb-8">
             <h1 class="text-4xl font-bold text-gray-900">Pixel Fade Out Gradient Pattern SVG Generator</h1>
-            <p class="text-lg text-gray-600 mt-2">Create custom random fade gradients/patterns and export them as SVG. Useful for 3D printing.</p>
+            <p class="text-lg text-gray-600 mt-2">Create custom random fade gradients/patterns and export them as SVG.
+                Useful for 3D printing.</p>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -36,20 +41,26 @@
                         <h3 class="text-lg font-semibold mb-3 text-gray-700">Grid & Pixel</h3>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label for="columns" class="block text-sm font-medium text-gray-600 mb-1">Columns</label>
-                                <input type="number" id="columns" value="50" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <label for="columns"
+                                    class="block text-sm font-medium text-gray-600 mb-1">Columns</label>
+                                <input type="number" id="columns" value="50"
+                                    class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
                                 <label for="rows" class="block text-sm font-medium text-gray-600 mb-1">Rows</label>
-                                <input type="number" id="rows" value="50" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <input type="number" id="rows" value="50"
+                                    class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
-                                <label for="pixelSize" class="block text-sm font-medium text-gray-600 mb-1">Pixel Size</label>
-                                <input type="number" id="pixelSize" value="10" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <label for="pixelSize" class="block text-sm font-medium text-gray-600 mb-1">Pixel
+                                    Size</label>
+                                <input type="number" id="pixelSize" value="10"
+                                    class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
                                 <label for="gap" class="block text-sm font-medium text-gray-600 mb-1">Gap</label>
-                                <input type="number" id="gap" value="1" min="0" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <input type="number" id="gap" value="1" min="0"
+                                    class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                         </div>
                     </div>
@@ -58,18 +69,21 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <h3 class="text-lg font-semibold mb-1 text-gray-700">Fade Direction</h3>
-                             <label for="directionMode" class="block text-sm font-medium text-gray-600 mb-2">Mode</label>
-                            <select id="directionMode" class="w-full p-2 border border-gray-300 rounded-lg mb-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            <label for="directionMode" class="block text-sm font-medium text-gray-600 mb-2">Mode</label>
+                            <select id="directionMode"
+                                class="w-full p-2 border border-gray-300 rounded-lg mb-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                                 <option value="radial">Radial</option>
                                 <option value="linear" selected>Linear</option>
                             </select>
-                            <div id="direction-editor-container" class="editor-container bg-gray-50 p-2 rounded-lg border border-gray-200 w-full h-32">
+                            <div id="direction-editor-container"
+                                class="editor-container bg-gray-50 p-2 rounded-lg border border-gray-200 w-full h-32">
                                 <svg id="direction-editor" class="w-full h-full"></svg>
                             </div>
                         </div>
                         <div>
-                             <h3 class="text-lg font-semibold mb-3 text-gray-700">Fade Curve</h3>
-                            <div id="curve-editor-container" class="editor-container bg-gray-50 p-2 rounded-lg border border-gray-200 w-full h-40">
+                            <h3 class="text-lg font-semibold mb-3 text-gray-700">Fade Curve</h3>
+                            <div id="curve-editor-container"
+                                class="editor-container bg-gray-50 p-2 rounded-lg border border-gray-200 w-full h-40">
                                 <svg id="curve-editor" class="w-full h-full"></svg>
                             </div>
                         </div>
@@ -80,23 +94,29 @@
                         <h3 class="text-lg font-semibold mb-3 text-gray-700">Style & Randomness</h3>
                         <div>
                             <label for="seed" class="block text-sm font-medium text-gray-600 mb-1">Random Seed</label>
-                            <input type="text" id="seed" value="hello" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            <input type="text" id="seed" value="hello"
+                                class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                         </div>
                         <div class="mt-4 space-y-2">
                             <div class="flex items-center">
-                                <input type="checkbox" id="transparentBg" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                                <label for="transparentBg" class="ml-2 block text-sm text-gray-900">Transparent background</label>
+                                <input type="checkbox" id="transparentBg"
+                                    class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                                <label for="transparentBg" class="ml-2 block text-sm text-gray-900">Transparent
+                                    background</label>
                             </div>
                             <div class="flex items-center">
-                                <input type="checkbox" id="bwToggle" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                                <label for="bwToggle" class="ml-2 block text-sm text-gray-900">Use Black & White only</label>
+                                <input type="checkbox" id="bwToggle"
+                                    class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                                <label for="bwToggle" class="ml-2 block text-sm text-gray-900">Use Black & White
+                                    only</label>
                             </div>
                         </div>
                     </div>
 
                     <!-- Export -->
                     <div class="pt-4 border-t">
-                         <button id="exportBtn" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300">
+                        <button id="exportBtn"
+                            class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300">
                             Export SVG
                         </button>
                     </div>
@@ -105,8 +125,10 @@
 
             <!-- Preview Column -->
             <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center">
-                 <h2 class="text-2xl font-bold mb-6 self-start">Preview</h2>
-                <div id="preview" class="w-full h-full border-2 border-dashed border-gray-300 rounded-lg overflow-auto flex items-center justify-center bg-gray-50" style="min-height: 400px;">
+                <h2 class="text-2xl font-bold mb-6 self-start">Preview</h2>
+                <div id="preview"
+                    class="w-full h-full border-2 border-dashed border-gray-300 rounded-lg overflow-auto flex items-center justify-center bg-gray-50"
+                    style="min-height: 400px;">
                     <!-- SVG will be rendered here -->
                 </div>
             </div>
@@ -123,8 +145,8 @@
         const directionModeSelect = document.getElementById('directionMode');
 
         // --- State ---
-        let curvePoints = [{x: 0, y: 1}, {x: 0.5, y: 0.5}, {x: 1, y: 0}]; 
-        let directionPoints = [{x: 0.5, y: 0.0}, {x: 0.5, y: 1.0}]; // P1 (start), P2 (end)
+        let curvePoints = [{ x: 0, y: 1 }, { x: 0.5, y: 0.5 }, { x: 1, y: 0 }];
+        let directionPoints = [{ x: 0.5, y: 0.0 }, { x: 0.5, y: 1.0 }]; // P1 (start), P2 (end)
         let draggedCurvePointIndex = null;
         let draggedDirectionPointIndex = null;
 
@@ -134,13 +156,13 @@
             const height = directionEditorEl.clientHeight;
             directionEditorEl.innerHTML = ''; // Clear
 
-            directionEditorEl.innerHTML += `<line x1="${width/2}" y1="0" x2="${width/2}" y2="${height}" stroke="#e0e0e0" stroke-width="1"/>`;
-            directionEditorEl.innerHTML += `<line x1="0" y1="${height/2}" x2="${width}" y2="${height/2}" stroke="#e0e0e0" stroke-width="1"/>`;
-            
+            directionEditorEl.innerHTML += `<line x1="${width / 2}" y1="0" x2="${width / 2}" y2="${height}" stroke="#e0e0e0" stroke-width="1"/>`;
+            directionEditorEl.innerHTML += `<line x1="0" y1="${height / 2}" x2="${width}" y2="${height / 2}" stroke="#e0e0e0" stroke-width="1"/>`;
+
             const mode = directionModeSelect.value;
-            
+
             if (mode === 'linear') {
-                 // Draw line between points
+                // Draw line between points
                 directionEditorEl.innerHTML += `<line x1="${directionPoints[0].x * width}" y1="${directionPoints[0].y * height}" x2="${directionPoints[1].x * width}" y2="${directionPoints[1].y * height}" stroke="#a5b4fc" stroke-width="2"/>`;
             }
 
@@ -181,15 +203,15 @@
 
         function getCurveValue(x) {
             let p1, p2;
-            for (let i = 0; i < curvePoints.length - 1; i++) { if (x >= curvePoints[i].x && x <= curvePoints[i+1].x) { p1 = curvePoints[i]; p2 = curvePoints[i+1]; break; } }
+            for (let i = 0; i < curvePoints.length - 1; i++) { if (x >= curvePoints[i].x && x <= curvePoints[i + 1].x) { p1 = curvePoints[i]; p2 = curvePoints[i + 1]; break; } }
             if (!p1 || !p2) return curvePoints[curvePoints.length - 1].y;
             const t = (p2.x - p1.x) === 0 ? 0 : (x - p1.x) / (p2.x - p1.x);
             return p1.y * (1 - t) + p2.y * t;
         }
 
         // --- PRNG ---
-        function mulberry32(a) { return function() { var t = a += 0x6D2B79F5; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; } }
-        function xmur3(str) { for(var i = 0, h = 1779033703 ^ str.length; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 3432918353), h = h << 13 | h >>> 19; return function() { h = Math.imul(h ^ h >>> 16, 2246822507); h = Math.imul(h ^ h >>> 13, 3266489909); return (h ^= h >>> 16) >>> 0; } }
+        function mulberry32(a) { return function () { var t = a += 0x6D2B79F5; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; } }
+        function xmur3(str) { for (var i = 0, h = 1779033703 ^ str.length; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 3432918353), h = h << 13 | h >>> 19; return function () { h = Math.imul(h ^ h >>> 16, 2246822507); h = Math.imul(h ^ h >>> 13, 3266489909); return (h ^= h >>> 16) >>> 0; } }
 
         // --- Main SVG Generation Logic ---
         function generateSVG() {
@@ -201,10 +223,10 @@
             const isTransparent = document.getElementById('transparentBg').checked;
             const useBwOnly = document.getElementById('bwToggle').checked;
             const directionMode = directionModeSelect.value;
-            
+
             const seed = xmur3(seedStr);
             const rand = mulberry32(seed());
-            
+
             const totalPixelSize = pixelSize + gap;
             const width = cols * totalPixelSize - (cols > 0 ? gap : 0);
             const height = rows * totalPixelSize - (rows > 0 ? gap : 0);
@@ -220,10 +242,10 @@
                         const originY = directionPoints[0].y * (rows - 1);
                         const dist = Math.sqrt(Math.pow(c - originX, 2) + Math.pow(r - originY, 2));
                         const maxPossibleDist = Math.max(
-                            Math.sqrt(originX**2 + originY**2),
-                            Math.sqrt((cols-1-originX)**2 + originY**2),
-                            Math.sqrt(originX**2 + (rows-1-originY)**2),
-                            Math.sqrt((cols-1-originX)**2 + (rows-1-originY)**2)
+                            Math.sqrt(originX ** 2 + originY ** 2),
+                            Math.sqrt((cols - 1 - originX) ** 2 + originY ** 2),
+                            Math.sqrt(originX ** 2 + (rows - 1 - originY) ** 2),
+                            Math.sqrt((cols - 1 - originX) ** 2 + (rows - 1 - originY) ** 2)
                         );
                         fadeValue = maxPossibleDist > 0 ? 1 - (dist / maxPossibleDist) : 0;
                     } else { // Linear mode
@@ -257,9 +279,9 @@
         }
 
         // --- Event Handlers ---
-        function handleInputChange() { 
+        function handleInputChange() {
             drawDirectionEditor();
-            generateSVG(); 
+            generateSVG();
         }
         function handleExport() {
             const svgData = preview.innerHTML;
@@ -273,7 +295,7 @@
             document.body.removeChild(downloadLink);
             URL.revokeObjectURL(svgUrl);
         }
-        
+
         // --- Pointer Events for Editors ---
         directionEditorEl.addEventListener('pointerdown', (e) => {
             const rect = directionEditorEl.getBoundingClientRect();
@@ -283,7 +305,7 @@
             const pointsToCheck = directionModeSelect.value === 'radial' ? [directionPoints[0]] : directionPoints;
             pointsToCheck.forEach((p, index) => {
                 const handleX = p.x * width; const handleY = p.y * height;
-                const distance = Math.sqrt((x - handleX)**2 + (y - handleY)**2);
+                const distance = Math.sqrt((x - handleX) ** 2 + (y - handleY) ** 2);
                 if (distance < 12 && distance < minDistance) { minDistance = distance; clickedIndex = index; }
             });
             if (clickedIndex !== -1) { draggedDirectionPointIndex = clickedIndex; }
@@ -295,7 +317,7 @@
             const width = rect.width; const height = rect.height;
             curvePoints.forEach((p, index) => {
                 const handleX = p.x * width; const handleY = p.y * height;
-                if (Math.sqrt((x - handleX)**2 + (y - handleY)**2) < 12) { draggedCurvePointIndex = index; }
+                if (Math.sqrt((x - handleX) ** 2 + (y - handleY) ** 2) < 12) { draggedCurvePointIndex = index; }
             });
         });
 
@@ -339,7 +361,7 @@
         // --- Initial Setup ---
         inputs.forEach(input => input.addEventListener('input', handleInputChange));
         exportBtn.addEventListener('click', handleExport);
-        
+
         window.addEventListener('load', () => {
             drawDirectionEditor();
             drawCurveEditor();
@@ -350,4 +372,5 @@
         new ResizeObserver(drawCurveEditor).observe(curveEditorEl);
     </script>
 </body>
+
 </html>
