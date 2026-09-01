@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+# This project has no package manager dependencies.
+exit 0
