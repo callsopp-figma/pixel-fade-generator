@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -eu
+
+# This project is dependency-free static HTML.
+exit 0
