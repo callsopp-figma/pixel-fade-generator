@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+: "${PORT:?PORT must be set by the preview supervisor}"
+exec python3 -m http.server "$PORT" --bind 0.0.0.0
