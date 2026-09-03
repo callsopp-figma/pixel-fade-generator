@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+# test!
+
+rm -rf dist
+mkdir -p dist
+cp index.html dist/index.html
+exec figma make deploy-preview --build-dir dist

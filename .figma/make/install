@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+# This project has no package manifest or external runtime dependencies.
+exit 0
