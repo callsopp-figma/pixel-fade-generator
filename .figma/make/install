@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+# This imported project is a dependency-free static site.
+exit 0
