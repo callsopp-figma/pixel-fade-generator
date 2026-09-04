@@ -16,12 +16,33 @@
         .handle {
             cursor: move;
         }
+        :root {
+            color-scheme: light;
+        }
+        .dark {
+            color-scheme: dark;
+        }
+        .dark body { background-color: #111827; color: #e5e7eb; }
+        .dark .bg-white { background-color: #1f2937; }
+        .dark .bg-gray-50 { background-color: #111827; }
+        .dark .text-gray-900 { color: #f9fafb; }
+        .dark .text-gray-800 { color: #e5e7eb; }
+        .dark .text-gray-700, .dark .text-gray-600 { color: #9ca3af; }
+        .dark .border-gray-300, .dark .border-gray-200 { border-color: #4b5563; }
+        .dark input, .dark select { background-color: #374151; color: #f9fafb; border-color: #4b5563; }
+        .dark .border-t { border-color: #4b5563; }
+        .dark #preview { border-color: #6b7280; }
+        .theme-toggle { transition: transform 200ms ease, background-color 200ms ease; }
+        .theme-toggle:hover { transform: translateY(-1px); }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <div class="container mx-auto p-4 lg:p-8">
-        <header class="text-center mb-8">
+        <header class="text-center mb-8 relative">
+            <button id="themeToggle" type="button" aria-label="Switch to dark mode" class="theme-toggle absolute right-0 top-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <span id="themeLabel">Dark mode</span>
+            </button>
             <h1 class="text-4xl font-bold text-gray-900">Pixel Fade Out Gradient Pattern SVG Generator</h1>
             <p class="text-lg text-gray-600 mt-2">Create custom random fade gradients/patterns and export them as SVG. Useful for 3D printing.</p>
         </header>
@@ -121,6 +142,22 @@
         const curveEditorEl = document.getElementById('curve-editor');
         const directionEditorEl = document.getElementById('direction-editor');
         const directionModeSelect = document.getElementById('directionMode');
+        const themeToggle = document.getElementById('themeToggle');
+        const themeLabel = document.getElementById('themeLabel');
+
+        function setTheme(isDark) {
+            document.documentElement.classList.toggle('dark', isDark);
+            themeLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            themeToggle.classList.toggle('bg-gray-700', isDark);
+            themeToggle.classList.toggle('text-gray-100', isDark);
+        }
+
+        setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.documentElement.classList.contains('dark'));
+            generateSVG();
+        });
 
         // --- State ---
         let curvePoints = [{x: 0, y: 1}, {x: 0.5, y: 0.5}, {x: 1, y: 0}]; 
@@ -201,6 +238,9 @@
             const isTransparent = document.getElementById('transparentBg').checked;
             const useBwOnly = document.getElementById('bwToggle').checked;
             const directionMode = directionModeSelect.value;
+            const isDark = document.documentElement.classList.contains('dark');
+            const pixelFill = isDark ? 'white' : 'black';
+            const backgroundFill = isDark ? 'black' : 'white';
             
             const seed = xmur3(seedStr);
             const rand = mulberry32(seed());
@@ -209,7 +249,7 @@
             const width = cols * totalPixelSize - (cols > 0 ? gap : 0);
             const height = rows * totalPixelSize - (rows > 0 ? gap : 0);
             let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
-            if (!isTransparent) svg += `<rect width="100%" height="100%" fill="white"/>`;
+            if (!isTransparent) svg += `<rect width="100%" height="100%" fill="${backgroundFill}"/>`;
 
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < cols; c++) {
@@ -248,7 +288,7 @@
                         const x = c * totalPixelSize;
                         const y = r * totalPixelSize;
                         const opacity = useBwOnly ? 1 : Math.min(1, curveAdjustedFade * 1.5);
-                        svg += `<rect x="${x}" y="${y}" width="${pixelSize}" height="${pixelSize}" fill="black" fill-opacity="${opacity}"/>`;
+                        svg += `<rect x="${x}" y="${y}" width="${pixelSize}" height="${pixelSize}" fill="${pixelFill}" fill-opacity="${opacity}"/>`;
                     }
                 }
             }
