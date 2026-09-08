@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This project is a self-contained static site and has no package dependencies.
+exit 0
