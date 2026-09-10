@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This project is a dependency-free static site; "building" is staging the
+# static assets into a clean output directory.
+rm -rf dist
+mkdir -p dist
+cp index.html dist/
+
+[[ -d "dist" ]] || {
+  echo "Expected build output at dist" >&2
+  exit 1
+}
+figma make deploy --build-dir "dist"
