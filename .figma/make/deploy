@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Dependency-free static site: the repository root is the deployable output.
+[[ -f "index.html" ]] || {
+  echo "Expected build output at ." >&2
+  exit 1
+}
+figma make deploy --build-dir "."
