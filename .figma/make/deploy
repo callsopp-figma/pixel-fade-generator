@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This project is a dependency-free static site; no build step is required.
+[[ -f "index.html" ]] || {
+  echo "Expected build output at ." >&2
+  exit 1
+}
+figma make deploy --build-dir "."
