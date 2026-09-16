@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+[[ -f index.html ]] || {
+  echo "Expected static entrypoint at index.html" >&2
+  exit 1
+}
+
+figma make deploy --build-dir .
