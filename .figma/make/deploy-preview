@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mkdir -p dist
+cp index.html dist/
+figma make deploy-preview --build-dir dist
