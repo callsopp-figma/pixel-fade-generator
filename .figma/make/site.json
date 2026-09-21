@@ -1,0 +1,10 @@
+{
+  "description": "Easily customize your website's background color to green, enhancing visual appeal and user experience for designers and developers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
