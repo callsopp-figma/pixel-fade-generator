@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-# This project is a dependency-free static site.
+# No dependencies to install — static HTML app
 exit 0
