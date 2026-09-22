@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BUILD_DIR=".figma-build"
+rm -rf "$BUILD_DIR"
+mkdir -p "$BUILD_DIR"
+cp index.html "$BUILD_DIR/"
+
+figma make deploy-preview --build-dir "$BUILD_DIR"
