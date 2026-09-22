@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BUILD_DIR=".figma-build"
+rm -rf "$BUILD_DIR"
+mkdir -p "$BUILD_DIR"
+cp index.html "$BUILD_DIR/"
+
+[[ -d "$BUILD_DIR" ]] || { echo "Expected build output at $BUILD_DIR" >&2; exit 1; }
+figma make deploy --build-dir "$BUILD_DIR"
