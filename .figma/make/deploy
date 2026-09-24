@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Dependency-free static site: the production "build" stages the static assets.
+BUILD_DIR="dist"
+rm -rf "$BUILD_DIR"
+mkdir -p "$BUILD_DIR"
+cp index.html "$BUILD_DIR/"
+
+[[ -d "$BUILD_DIR" ]] || {
+  echo "Expected build output at $BUILD_DIR" >&2
+  exit 1
+}
+
+figma make deploy --build-dir "$BUILD_DIR"
