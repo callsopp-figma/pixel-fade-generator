@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Dependency-free static site: the "build" is assembling the static assets
+# into a clean output directory.
+cd "$(dirname "$0")/../.."
+
+rm -rf dist
+mkdir -p dist
+cp index.html dist/
+
+exec figma make deploy-preview --build-dir dist
