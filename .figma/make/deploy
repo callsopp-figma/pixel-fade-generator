@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This project is a dependency-free static site: index.html is the whole app.
+# There is no bundler, so the production "build" assembles static files into dist/.
+BUILD_DIR="dist"
+
+rm -rf "$BUILD_DIR"
+mkdir -p "$BUILD_DIR"
+cp index.html "$BUILD_DIR/"
+
+[[ -d "$BUILD_DIR" ]] || {
+  echo "Expected build output at $BUILD_DIR" >&2
+  exit 1
+}
+
+figma make deploy --build-dir "$BUILD_DIR"
