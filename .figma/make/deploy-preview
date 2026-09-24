@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Dependency-free static site: the "build" is assembling the served files
+# into a clean output directory.
+rm -rf dist
+mkdir -p dist
+cp index.html dist/
+
+exec figma make deploy-preview --build-dir dist
