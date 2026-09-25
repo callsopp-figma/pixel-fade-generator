@@ -1,0 +1,10 @@
+{
+  "description": "Easily customize your website's background color with a simple interface, allowing users to create visually appealing designs that enhance user engagement.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
