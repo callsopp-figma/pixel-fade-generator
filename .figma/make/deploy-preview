@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+figma make deploy-preview --build-dir .
