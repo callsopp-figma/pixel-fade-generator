@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Static site — no build step; root directory is the deployable output.
+[[ -f "index.html" ]] || {
+  echo "Expected index.html in project root" >&2
+  exit 1
+}
+
+figma make deploy-preview --build-dir "."
