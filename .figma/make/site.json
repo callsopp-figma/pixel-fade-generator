@@ -1,0 +1,10 @@
+{
+  "description": "A setup-focused project workspace that helps teams bootstrap imported projects and verify deployment and preview readiness before launch.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
